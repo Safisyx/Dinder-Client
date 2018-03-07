@@ -1,0 +1,8 @@
+.header {
+  flex-shrink: 0;
+}
+
+
+.footer {
+  flex-shrink: 0;
+}
