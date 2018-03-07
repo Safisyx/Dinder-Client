@@ -1,19 +1,19 @@
 import React, { PureComponent } from 'react'
-//import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-//import {guessLetter} from '../actions/action'
+import {changePicture} from '../actions/changePicture'
 import './Breed.css'
 
-export class Breed extends PureComponent {
-   static propTypes = {
+class Breed extends PureComponent {
+  static propTypes = {
     // guessLetter: PropTypes.func.isRequired
-     id: PropTypes.number.isRequired,
-     name: PropTypes.string.isRequired,
-     image: PropTypes.string.isRequired,
-     vote: PropTypes.number.isRequired,
-     onLike: PropTypes.func.isRequired,
-     onDislike: PropTypes.func.isRequired,
-   }
+      //id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+      //vote: PropTypes.number.isRequire
+    image: PropTypes.string.isRequired,
+    //onLike: PropTypes.func.isRequired,
+    onDislike: PropTypes.func.isRequired,
+  }
 
   onLike = (e) => {
     //let x = e.target.value.toLowerCase()
@@ -25,18 +25,23 @@ export class Breed extends PureComponent {
   }
   onDislike = (e) => {
     //CHANGE PICTURE
-    console.log('CHANGE PICTURE');
+    this.props.changePicture()
+  }
+
+  componentWillMount() {
+    this.props.changePicture();
   }
 
   render() {
+    console.log(this.props.image);
     return (
       <div className='Breed'>
-        <h2> {this.props.name} </h2>
+        <h2> {this.props.breed.name} </h2>
         <div className='imageContainer'>
-          <img src={this.props.image} alt={this.props.name}/>
+          <img src={this.props.image} alt={this.props.breed.name}/>
         </div>
         <div className='BreedFooter'>
-          <p>Votes {this.props.vote}</p>
+          <p>Votes {/*this.props.breed.vote*/}</p>
           <button onClick={ () => this.onDislike() }>{'Dislike'}</button>
           <button onClick={ () => this.onLike() }>{'Like'}</button>
         </div>
@@ -51,6 +56,12 @@ export class Breed extends PureComponent {
 //   }
 // }
 
+const mapStateToProps = (state,props) => {
+  //console.log(state.breed)
+  return{
+    breed : state.breed,
+    image : state.breed.image
+  }
+}
 
-
-export default Breed
+export default connect(mapStateToProps, {changePicture})(Breed)
