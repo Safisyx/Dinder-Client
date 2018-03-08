@@ -1,4 +1,5 @@
 import {CHANGE_PICTURE} from '../actions/changePicture'
+import {LIKE_BREED} from '../actions/likeBreed'
 export default function (state = {}, action) {
     switch (action.type) {
       case CHANGE_PICTURE:
@@ -14,6 +15,8 @@ export default function (state = {}, action) {
           image,
           name
         }
+       case LIKE_BREED:
+         return state
       default:
         return state
     }

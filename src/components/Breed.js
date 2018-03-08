@@ -2,12 +2,13 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import {changePicture} from '../actions/changePicture'
+import {likeBreed} from '../actions/likeBreed'
 import './Breed.css'
 
 class Breed extends PureComponent {
   static propTypes = {
     // guessLetter: PropTypes.func.isRequired
-      //id: PropTypes.number.isRequired,
+    //id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
       //vote: PropTypes.number.isRequire
     image: PropTypes.string.isRequired,
@@ -21,6 +22,9 @@ class Breed extends PureComponent {
     //CHANGE PICTURE ACTION
     //this.props.onLike(x)
     //e.target.value=''
+    console.log(this.props.breed.name);
+    this.props.likeBreed(this.props.breed.name,2)
+    this.props.changePicture()
     console.log('CHANGE PICTURE and UP VOTE');
   }
   onDislike = (e) => {
@@ -64,4 +68,4 @@ const mapStateToProps = (state,props) => {
   }
 }
 
-export default connect(mapStateToProps, {changePicture})(Breed)
+export default connect(mapStateToProps, {changePicture, likeBreed})(Breed)
