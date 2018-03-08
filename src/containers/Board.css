@@ -1,3 +1,7 @@
+.Board {
+  position: relative;
+}
+
 .header {
   flex-shrink: 0;
 }

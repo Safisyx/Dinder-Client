@@ -46,7 +46,9 @@ class TopTen extends PureComponent {
     }
     const topTen = users.sort((a,b) => this.matchedBreed(a)<this.matchedBreed(b))
                         .slice(0,9);
-
+    if (!this.props.currentUser) return (
+			<Redirect to="/" />
+		)
     return (
       <div className='topTen'>
         <h2> `Hey ${this.props.currentUser.name}` </h2>
@@ -69,7 +71,7 @@ const mapStateToProps = function (state) {
   console.log(state);
   return {
     users: state.users,
-    currentUser: { name:state.currentUser.name}
+    currentUser: state.currentUser
   }
 }
 

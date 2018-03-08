@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
-//import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 // import PropTypes from 'prop-types'
 //import {guessLetter} from '../actions/action'
 import Breed from '../components/Breed'
+//import TopTen from '../components/TopTen'
 import './Board.css'
 import im from '../images/dogpaw.jpg'
 import { Navbar, Nav, NavItem} from 'react-bootstrap';
@@ -47,4 +48,4 @@ class Board extends PureComponent {
 );
 }
 }
-export default Board;
+export default connect()(Board);
