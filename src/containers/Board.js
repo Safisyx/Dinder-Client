@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 // import PropTypes from 'prop-types'
 //import {guessLetter} from '../actions/action'
 import Breed from '../components/Breed'
-// import TopTen from '../components/TopTen'
+import TopTen from '../components/TopTen'
 import './Board.css'
 // import im from '../images/dogpaw2.png'
 import {Redirect } from 'react-router-dom'
@@ -35,7 +35,7 @@ class Board extends PureComponent {
       <div class="vote"> <Breed/> </div>
       <div class="matches">
         <div class="matchesTitle">Matches</div>
-        <div class="matchesBody"></div>
+        <div class="matchesBody"> <TopTen/></div>
       </div>
      </div>
 

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import {changePicture} from '../actions/changePicture'
-// import {likeBreed} from '../actions/likeBreed'
+import {likeBreed} from '../actions/likeBreed'
 import './Breed.css'
 import '../fontawesome-all.js'
 
@@ -83,4 +83,4 @@ const mapStateToProps = (state,props) => {
   }
 }
 
-export default connect(mapStateToProps, {changePicture})(Breed)
+export default connect(mapStateToProps, {changePicture, likeBreed})(Breed)

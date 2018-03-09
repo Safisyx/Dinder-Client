@@ -9,9 +9,9 @@
 
 .header {
   height: 80px;
-  background-color: pink;
+  background-color: lightgreen;
   border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-bottom: 5px solid pink;
 
   display: flex;
   align-items: center;
@@ -43,7 +43,8 @@
 .matches {
   flex: 1;
 
-  border-left: 1px solid black;
+  border-left: 1px solid lightgrey;
+  background-color: lightgrey;
 
   display: flex;
   flex-direction: column;
