@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 // import PropTypes from 'prop-types'
 //import {guessLetter} from '../actions/action'
 import Breed from '../components/Breed'
-//import TopTen from '../components/TopTen'
+import TopTen from '../components/TopTen'
 import './Board.css'
 import im from '../images/dogpaw.jpg'
 import { Navbar, Nav, NavItem} from 'react-bootstrap';
@@ -21,7 +21,6 @@ class Board extends PureComponent {
    if (!this.props.currentUser) return (
      <Redirect to="/"/>
    )
-   console.log(this.props.users[0].preferredbreed);
  return (
 
    <div>
@@ -44,6 +43,7 @@ class Board extends PureComponent {
     </Navbar>
 
     <Breed/>
+    <TopTen/>
 
   <Navbar fixedBottom className='footer'>
     <Nav>
