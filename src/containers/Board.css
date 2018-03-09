@@ -1,12 +1,64 @@
 .Board {
-  position: relative;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-  flex-shrink: 0;
+  height: 80px;
+  background-color: pink;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.title {
+  font-family: monospace;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.loggedUser {
+  font-size: 20px;
+  padding: 20px;
+}
+
+.main {
+  flex: 1;
+
+  display: flex;
+}
+
+.vote {
+  flex: 2;
+}
+
+.matches {
+  flex: 1;
+
+  border-left: 1px solid black;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.matchesTitle {
+  font-size: 30px;
+  text-align: center;
+}
+
+.matchesBody {
+  flex: 1;
+}
 
 .footer {
-  flex-shrink: 0;
+  height: 30px;
+  border-top: 1px solid black;
 }
