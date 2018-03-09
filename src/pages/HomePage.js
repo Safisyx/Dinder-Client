@@ -19,8 +19,8 @@ class HomePage extends PureComponent {
     if (this.props.currentUser) return (
 			<Redirect to="/dinder" />
 		)
-    if (this.props.signup.success) (
-			alert('Now you can login!!')
+    if (this.props.signup.success) return (
+      alert('You can now login')
 		)
     return (
       <div className="HomePage">

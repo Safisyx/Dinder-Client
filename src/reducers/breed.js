@@ -13,10 +13,13 @@ export default function (state = {}, action) {
         //console.log(name);
         return {
           image,
-          name
+          name,
         }
        case LIKE_BREED:
-         return state
+         //console.log(action.payload.numberoflikes);
+         return {
+           vote: action.payload.numberoflikes
+         }
       default:
         return state
     }

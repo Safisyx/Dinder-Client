@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import {changePicture} from '../actions/changePicture'
 import {likeBreed} from '../actions/likeBreed'
+import {getUsers} from '../actions/users'
 import './Breed.css'
 
 class Breed extends PureComponent {
@@ -22,11 +23,14 @@ class Breed extends PureComponent {
     //CHANGE PICTURE ACTION
     //this.props.onLike(x)
     //e.target.value=''
-    console.log(this.props.breed.name);
-    console.log(this.props.currentUser.details.id);
-    this.props.likeBreed(this.props.breed.name,this.props.currentUser.details.id)
+    //console.log(this.props.breed.name);
+    //console.log(this.props.currentUser.details.id);
+    if (!this.props.currentUser.details.preferredbreed.includes(this.props.breed.name)){
+        this.props.likeBreed(this.props.breed.name,this.props.currentUser.details.id)
+      }
+    this.props.getUsers()
     this.props.changePicture()
-    console.log('CHANGE PICTURE and UP VOTE');
+    //console.log('CHANGE PICTURE and UP VOTE');
   }
   onDislike = (e) => {
     //CHANGE PICTURE
@@ -47,7 +51,6 @@ class Breed extends PureComponent {
           <img src={this.props.image} alt={this.props.breed.name}/>
         </div>
         <div className='BreedFooter'>
-          <p>Votes {/*this.props.breed.vote*/}</p>
           <button onClick={ () => this.onDislike() }>{'Dislike'}</button>
           <button onClick={ () => this.onLike() }>{'Like'}</button>
         </div>
@@ -71,4 +74,4 @@ const mapStateToProps = (state,props) => {
   }
 }
 
-export default connect(mapStateToProps, {changePicture, likeBreed})(Breed)
+export default connect(mapStateToProps, {changePicture, likeBreed, getUsers})(Breed)

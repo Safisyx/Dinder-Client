@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import {Redirect } from 'react-router-dom'
+import {getUsers} from '../actions/users'
 import './TopTen.css'
 
 class TopTen extends PureComponent {
@@ -31,6 +32,7 @@ class TopTen extends PureComponent {
     }
     return accumulator
   }
+
   render() {
     //const { players } = this.props
 
@@ -44,6 +46,7 @@ class TopTen extends PureComponent {
     // }
     // //const users =[userA,userB]
     //console.log(this.props.currentUser);
+    /////////////this.props.getUsers()
     let user = {
       email:this.props.currentUser.details.email,
       name:this.props.currentUser.details.name,
@@ -59,9 +62,9 @@ class TopTen extends PureComponent {
     //let index
     for (let i=0; i<users.length;i++)
     {
-      console.log(users[i].preferredbreed);
-      console.log(user.preferredbreed);
-      console.log(this.matchedBreed(users[i]))
+    //  console.log(users[i].preferredbreed);
+    //  console.log(user.preferredbreed);
+    ///  console.log(this.matchedBreed(users[i]))
       if (users[i].email===user.email)
         users.splice(i,1);
     }
@@ -75,9 +78,12 @@ class TopTen extends PureComponent {
 			<Redirect to="/" />
 		)
     return (
+
       <div className='topTen'>
         <h2> {`Hey ${this.props.currentUser.details.name}`} </h2>
+        {(this.props.currentUser) &&
         <ul>
+          { console.log('################')}
           {topTen.map( (user) => (
             (this.matchedBreed(user)!==0)&&
             <li key={users.indexOf(user)}>
@@ -86,7 +92,7 @@ class TopTen extends PureComponent {
             </li>
           )
         )}
-        </ul>
+        </ul>}
       </div>
     )
   }
