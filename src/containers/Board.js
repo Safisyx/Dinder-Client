@@ -5,11 +5,9 @@ import { connect } from 'react-redux'
 import Breed from '../components/Breed'
 import TopTen from '../components/TopTen'
 import './Board.css'
-import im from '../images/dogpaw.jpg'
-import { Navbar, Nav, NavItem} from 'react-bootstrap';
+// import im from '../images/dogpaw2.png'
 import {Redirect } from 'react-router-dom'
 import {getUsers} from '../actions/users'
-
 
 
 
@@ -22,42 +20,30 @@ class Board extends PureComponent {
      <Redirect to="/"/>
    )
  return (
+   <div class='Board'>
 
-   <div>
+     <div class="header">
+       <div class="title">
+         Dinder
+       </div>
+       <div class="loggedUser">
+         My profile
+       </div>
+     </div>
 
-    <Navbar fixedTop className='header'>
-      <Navbar.Header>
-        <Navbar.Brand>
-          <h1>Dinder</h1>
-          <img src={im} width="15px" height="15px" alt="TEST"/>
-        </Navbar.Brand>
-      </Navbar.Header>
+     <div class="main">
+      <div class="vote"> <Breed/> </div>
+      <div class="matches">
+      <div> {`Hey ${this.props.currentUser.details.name}`} </div>
+        <div class="matchesTitle">These are your matches</div>
+        <div class="matchesBody"> <TopTen/></div>
+      </div>
+     </div>
 
-      <Nav pullRight>
-        <NavItem
-          eventKey={1}
-          href="#">
-          Log in
-        </NavItem>
-      </Nav>
-    </Navbar>
-
-    <Breed/>
-    <TopTen/>
-
-  <Navbar fixedBottom className='footer'>
-    <Nav>
-        <p>Thank you for visiting our website</p>
-    </Nav>
- </Navbar>
-
-
-
-
+     <div class='footer'>Thank you for visiting our website. All the rights reserved!!! Created and edited by Safidy, Rishitesh, Eva, Meritha</div>
   </div>
-);
-}
-}
+)}}
+
 const mapStateToProps = function (state) {
   return {
     currentUser: state.currentUser,

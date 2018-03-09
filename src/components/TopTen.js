@@ -80,8 +80,7 @@ class TopTen extends PureComponent {
     return (
 
       <div className='topTen'>
-        <h2> {`Hey ${this.props.currentUser.details.name}`} </h2>
-        {(this.props.currentUser) &&
+
         <ul>
           { console.log('################')}
           {topTen.map( (user) => (

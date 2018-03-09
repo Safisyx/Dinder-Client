@@ -5,6 +5,7 @@ import {changePicture} from '../actions/changePicture'
 import {likeBreed} from '../actions/likeBreed'
 import {getUsers} from '../actions/users'
 import './Breed.css'
+import '../fontawesome-all.js'
 
 class Breed extends PureComponent {
   static propTypes = {
@@ -45,19 +46,31 @@ class Breed extends PureComponent {
   render() {
     console.log(this.props.image);
     return (
-      <div className='Breed'>
-        <h2> {this.props.breed.name} </h2>
+      <div class="Breed">
+
         <div className='imageContainer'>
           <img src={this.props.image} alt={this.props.breed.name}/>
         </div>
-        <div className='BreedFooter'>
-          <button onClick={ () => this.onDislike() }>{'Dislike'}</button>
-          <button onClick={ () => this.onLike() }>{'Like'}</button>
+
+        <div class="breedName"> {this.props.breed.name} </div>
+
+        {/*this.props.breed.vote*/}
+
+        <div className='voteButtons'>
+          <button onClick={ () => this.onDislike() }>
+            <i class="far fa-thumbs-down"></i>
+          </button>
+
+          <button onClick={ () => this.onLike() }>
+            <i class="far fa-thumbs-up"></i>
+          </button>
         </div>
+
       </div>
     )
   }
 }
+
 
 // const mapDispatchToProps = dispatch => {
 //   return {
