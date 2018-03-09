@@ -1,12 +1,45 @@
-.Breed{
-  text-align: center;
-}
-.BreedFooter {
+.Breed {
+  height: 100%;
+  width: 100%;
 
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .imageContainer {
+  flex: 1;
+  overflow: auto;
+}
+
+.imageContainer img {
+  max-height: 100%;
+  max-width: 100%;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 20px;
+}
+
+.breedName {
+  height: 70px;
+  font-size: 30px;
   text-align: center;
-  height: 400px;
+  padding-bottom: 20px;
+}
+
+.voteButtons {
+  height: 100px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.voteButtons button {
+  font-size: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
