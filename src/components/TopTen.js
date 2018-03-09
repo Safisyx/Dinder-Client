@@ -76,7 +76,7 @@ class TopTen extends PureComponent {
 		)
     return (
       <div className='topTen'>
-        <h2> {`Hey ${this.props.currentUser.details.name}`} </h2>
+        
         <ul>
           {topTen.map( (user) => (
             (this.matchedBreed(user)!==0)&&

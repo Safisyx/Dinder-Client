@@ -27,19 +27,20 @@ class Board extends PureComponent {
          Dinder
        </div>
        <div class="loggedUser">
-         username
+         My profile
        </div>
      </div>
 
      <div class="main">
       <div class="vote"> <Breed/> </div>
       <div class="matches">
-        <div class="matchesTitle">Matches</div>
+      <div> {`Hey ${this.props.currentUser.details.name}`} </div>
+        <div class="matchesTitle">These are your matches</div>
         <div class="matchesBody"> <TopTen/></div>
       </div>
      </div>
 
-     <div class='footer'>Thank you for visiting our website</div>
+     <div class='footer'>Thank you for visiting our website. All the rights reserved!!! Created and edited by Safidy, Rishitesh, Eva, Meritha</div>
   </div>
 )}}
 
