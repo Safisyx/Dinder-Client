@@ -7,19 +7,25 @@ import Breed from '../components/Breed'
 import './Board.css'
 import im from '../images/dogpaw.jpg'
 import { Navbar, Nav, NavItem} from 'react-bootstrap';
+import {Redirect } from 'react-router-dom'
 
 
 
 
 class Board extends PureComponent {
  render() {
+   if (!this.props.currentUser) return (
+     <Redirect to="/"/>
+   )
+
  return (
+
    <div>
 
     <Navbar fixedTop className='header'>
       <Navbar.Header>
         <Navbar.Brand>
-          <p1>Dinder</p1>
+          <h1>Dinder</h1>
           <img src={im} width="15px" height="15px" alt="TEST"/>
         </Navbar.Brand>
       </Navbar.Header>
@@ -48,4 +54,9 @@ class Board extends PureComponent {
 );
 }
 }
-export default connect()(Board);
+const mapStateToProps = function (state) {
+  return {
+    currentUser: state.currentUser
+  }
+}
+export default connect(mapStateToProps)(Board);

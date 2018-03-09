@@ -20,19 +20,19 @@ export class NavBar extends PureComponent {
 
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
-  <a class="navbar-brand" href="./">Dinder <small> Making friends with folks that love the same breeds as you!</small></a>
+  <a className="navbar-brand" href="./">Dinder <small> Making friends with folks that love the same breeds as you!</small></a>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+  <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
     </ul>
-    <form class="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>
-      <input className="form-control mr-sm-2" type="email" name="email" id="email" placeholder="Email" value={
+    <form className="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>
+      <input className="form-control mr-sm-2" type="email" name="email" id="emailLogin" placeholder="Email" value={
 				    this.state.email || ''} onChange={ this.handleChange } />
-      <input className="form-control mr-sm-2" type="password" name="password" id="password" placeholder="Password" aria-label="Search" value={
+      <input className="form-control mr-sm-2" type="password" name="password" id="passwordLogin" placeholder="Password" aria-label="Search" value={
 						this.state.password || ''} onChange={ this.handleChange }/>
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
     </form>

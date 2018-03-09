@@ -39,7 +39,6 @@ class Breed extends PureComponent {
 
   render() {
     console.log(this.props.image);
-    let elem;
     return (
       <div className='Breed'>
         <h2> {this.props.breed.name} </h2>
