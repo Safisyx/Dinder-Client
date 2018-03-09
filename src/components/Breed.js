@@ -23,7 +23,8 @@ class Breed extends PureComponent {
     //this.props.onLike(x)
     //e.target.value=''
     console.log(this.props.breed.name);
-    this.props.likeBreed(this.props.breed.name,2)
+    console.log(this.props.currentUser.details.id);
+    this.props.likeBreed(this.props.breed.name,this.props.currentUser.details.id)
     this.props.changePicture()
     console.log('CHANGE PICTURE and UP VOTE');
   }
@@ -65,7 +66,8 @@ const mapStateToProps = (state,props) => {
   //console.log(state.breed)
   return{
     breed : state.breed,
-    image : state.breed.image
+    image : state.breed.image,
+    currentUser : state.currentUser
   }
 }
 
