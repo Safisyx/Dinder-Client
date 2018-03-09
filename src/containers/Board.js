@@ -8,16 +8,20 @@ import './Board.css'
 import im from '../images/dogpaw.jpg'
 import { Navbar, Nav, NavItem} from 'react-bootstrap';
 import {Redirect } from 'react-router-dom'
+import {getUsers} from '../actions/users'
 
 
 
 
 class Board extends PureComponent {
+  componentWillMount() {
+    this.props.getUsers();
+  }
  render() {
    if (!this.props.currentUser) return (
      <Redirect to="/"/>
    )
-
+   console.log(this.props.users[0].preferredbreed);
  return (
 
    <div>
@@ -56,7 +60,8 @@ class Board extends PureComponent {
 }
 const mapStateToProps = function (state) {
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    users: state.users
   }
 }
-export default connect(mapStateToProps)(Board);
+export default connect(mapStateToProps,{getUsers})(Board);

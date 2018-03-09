@@ -4,6 +4,7 @@ export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED';
 export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS'
 export const USER_SIGNUP_FAILED = 'USER_SIGNUP_FAILED'
+export const GET_USERS = 'GET_USERS';
 
 const baseUrl = 'http://localhost:4001';
 
@@ -32,6 +33,31 @@ export const login = (email, password) => (dispatch) => {
      })
 }
 
+// export const login = (email, password) => (dispatch) => {
+//
+//     request
+//      .post(`${baseUrl}/logins`)
+//      .send({ email, password })
+//      .then(result => {
+//        console.log(result.body);
+//        dispatch({
+//          type: USER_LOGIN_SUCCESS,
+//          payload: result.body
+//        })
+//      })
+//      .catch(err => {
+//          if (err.status === 400) {
+//              dispatch({
+//                  type: USER_LOGIN_FAILED,
+//                  payload: err.response.body.message || 'Unknown error'
+//              })
+//          }
+//          else {
+//              console.error(err)
+//          }
+//      })
+// }
+
 export const signup = (name, email, password, description) => (dispatch) => {
   console.log([name, email, password, description]);
 	request
@@ -53,4 +79,18 @@ export const signup = (name, email, password, description) => (dispatch) => {
 				console.error(err)
 			}
 		})
+}
+
+export const getUsers = () => dispatch => {
+  request
+    .get(`${baseUrl}/users`)
+    .then(result => {
+      dispatch({
+        type: GET_USERS,
+        payload: result.body
+      })
+    })
+    .catch(err => {
+      console.error(err);
+    })
 }
