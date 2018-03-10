@@ -26,7 +26,7 @@ export default class SignupForm extends PureComponent {
               src="https://i.imgur.com/neuNNhV.jpg" alt="Can't load"
               className="img-fluid img-thumbnail"
               />
-            <p>Some text about some dog shit...</p>
+            <p>We all love dogs...</p>
           </div>
           <div className="col-md-4">
             <div className="card card-body">

@@ -10,16 +10,15 @@ export default function (state = {}, action) {
         let nameWithSub = toArray[toArray.length-2]
         let splitSub = nameWithSub.split('-')
         const name = (splitSub.length===2)? splitSub[1]+' '+splitSub[0] : splitSub[0]
-        //console.log(name);
+        console.log(name);
         return {
           image,
-          name,
+          name
         }
        case LIKE_BREED:
          //console.log(action.payload.numberoflikes);
-         return {
-           vote: action.payload.numberoflikes
-         }
+         return
+           state//vote: action.payload.numberoflikes
       default:
         return state
     }

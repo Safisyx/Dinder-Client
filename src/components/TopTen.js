@@ -52,7 +52,7 @@ class TopTen extends PureComponent {
       name:this.props.currentUser.details.name,
       preferredbreed:this.props.currentUser.details.preferredbreed
     }
-    console.log(user);
+    //console.log(user);
     let users
     if (this.props.users)
       users = this.props.users.slice();
@@ -82,16 +82,16 @@ class TopTen extends PureComponent {
       <div className='topTen'>
 
         <ul>
-          { console.log('################')}
           {topTen.map( (user) => (
             (this.matchedBreed(user)!==0)&&
             <li key={users.indexOf(user)}>
               <h3>{`${user.name}`}</h3>
               <p> {`${user.email}`} </p>
+              {/*<p> {`This person likes ${this.matchedBreed(user)} among your ${this.props.currentUser.details.preferredbreed.length} preferred ones`} </p>*/}
             </li>
           )
         )}
-        </ul>}
+        </ul>
       </div>
     )
   }
@@ -106,4 +106,4 @@ const mapStateToProps = function (state) {
   }
 }
 
-export default connect(mapStateToProps)(TopTen)
+export default connect(mapStateToProps,{getUsers})(TopTen)

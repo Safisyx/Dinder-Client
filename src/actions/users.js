@@ -81,6 +81,7 @@ export const signup = (name, email, password, description) => (dispatch) => {
 		})
 }
 
+
 export const getUsers = () => dispatch => {
   request
     .get(`${baseUrl}/users`)

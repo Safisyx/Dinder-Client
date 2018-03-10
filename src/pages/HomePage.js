@@ -5,6 +5,7 @@ import SignupForm from '../components/SignupForm';
 import {login} from '../actions/users'
 import {signup} from '../actions/users'
 import {Redirect } from 'react-router-dom'
+import './HomePage.css'
 
 class HomePage extends PureComponent {
 
@@ -19,8 +20,8 @@ class HomePage extends PureComponent {
     if (this.props.currentUser) return (
 			<Redirect to="/dinder" />
 		)
-    if (this.props.signup.success) return (
-      alert('You can now login')
+    if (this.props.signup.success) (
+			alert('Now you can login!!')
 		)
     return (
       <div className="HomePage">

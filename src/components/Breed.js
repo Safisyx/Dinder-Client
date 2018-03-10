@@ -15,7 +15,7 @@ class Breed extends PureComponent {
       //vote: PropTypes.number.isRequire
     image: PropTypes.string.isRequired,
     //onLike: PropTypes.func.isRequired,
-    onDislike: PropTypes.func.isRequired,
+    //onDislike: PropTypes.func.isRequired,
   }
 
   onLike = (e) => {
@@ -29,7 +29,7 @@ class Breed extends PureComponent {
     if (!this.props.currentUser.details.preferredbreed.includes(this.props.breed.name)){
         this.props.likeBreed(this.props.breed.name,this.props.currentUser.details.id)
       }
-    this.props.getUsers()
+    //this.props.getUsers()
     this.props.changePicture()
     //console.log('CHANGE PICTURE and UP VOTE');
   }
@@ -44,7 +44,7 @@ class Breed extends PureComponent {
   }
 
   render() {
-    console.log(this.props.image);
+    //console.log(this.props.image);
     return (
       <div class="Breed">
 
