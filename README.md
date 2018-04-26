@@ -1,3 +1,5 @@
+This was a group project. The goal was to create a tinder like app for dog lovers using the [Dog API](https://dog.ceo/dog-api/)
+________________  
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
