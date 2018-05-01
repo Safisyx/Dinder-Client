@@ -7,7 +7,9 @@ export default function (state = null, action) {
       //console.log(action.payload);
       return action.payload;
     case LIKE_BREED:
-      //return { state.details.name, state.deta };
+      return {...state,
+              details:action.payload
+            }
     default:
       return state;
   }
