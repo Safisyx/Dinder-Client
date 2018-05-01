@@ -34,13 +34,14 @@ class Board extends PureComponent {
      <div class="main">
       <div class="vote"> <Breed/> </div>
       <div class="matches">
-      <div> {`Hey ${this.props.currentUser.details.name}`} </div>
-        <div class="matchesTitle">These are your matches</div>
+      <div> {`Hey ${this.props.currentUser.details.name}!`} </div>
+        <div class="matchesTitle">These are your top matches</div>
         <div class="matchesBody"> <TopTen/></div>
       </div>
      </div>
 
-     <div class='footer'>Thank you for visiting our website. All the rights reserved!!! Created and edited by Safidy, Rishitesh, Eva, Meritha</div>
+     <div class='footer'>Thank you for visiting our website. All rights reserved!!!
+     Created and edited by Eva, Meritha, Rishitesh, Safidy</div>
   </div>
 )}}
 

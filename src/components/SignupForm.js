@@ -3,14 +3,23 @@ import React, {PureComponent} from 'react';
 
 export default class SignupForm extends PureComponent {
 
-  state = {}
+  state = {
+    name:'',
+    password:'',
+    confirmPassword:'',
+    email:'',
+    description:'',
+  }
 
   handleForm = (e) => {
 		e.preventDefault()
+    const {name,email,password,confirmPassword}=this.state
+    if (name!=='' && password!=='' && email!=='' && (password===confirmPassword)){
 		this.props.onSubmit(this.state)
     this.setState({
       name:'',password:'',confirmPassword:'',email:'',description:''
     })
+    }
 	}
 
 	handleChange = (event) => {
@@ -66,7 +75,7 @@ export default class SignupForm extends PureComponent {
         					<p style={{color:'red'}}>The passwords do not match!</p>
         				}
                 <div className="form-group">
-                  <textarea className="form-control" rows="4" placeholder="What is you about..." name="description"
+                  <textarea className="form-control" rows="4" placeholder="If you want, tell us more about you..." name="description"
                       id="description" value={this.state.description || ''}
                       onChange={this.handleChange}></textarea>
                 </div>
