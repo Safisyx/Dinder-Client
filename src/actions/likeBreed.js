@@ -15,10 +15,12 @@ export const likeBreed = (name,id) => (dispatch) => {
       request
         .put(`${baseUrl}/users/${id}`)
         .send({preferredbreed: `${name}`})
-        .then(res => dispatch({
-          type: LIKE_BREED,
-          //payload: res.body
-        }))
+        .then(res =>
+          {console.log(res.body);
+            dispatch({
+             type: LIKE_BREED,
+             payload: res.body
+        })})
     })
     .catch(err => alert(err))
 }
