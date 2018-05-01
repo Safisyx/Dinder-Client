@@ -17,8 +17,7 @@ export default function (state = {}, action) {
         }
        case LIKE_BREED:
          //console.log(action.payload.numberoflikes);
-         return
-           state//vote: action.payload.numberoflikes
+         return state//vote: action.payload.numberoflikes
       default:
         return state
     }

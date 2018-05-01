@@ -8,6 +8,9 @@ export default class SignupForm extends PureComponent {
   handleForm = (e) => {
 		e.preventDefault()
 		this.props.onSubmit(this.state)
+    this.setState({
+      name:'',password:'',confirmPassword:'',email:'',description:''
+    })
 	}
 
 	handleChange = (event) => {
@@ -26,7 +29,7 @@ export default class SignupForm extends PureComponent {
               src="https://i.imgur.com/neuNNhV.jpg" alt="Can't load"
               className="img-fluid img-thumbnail"
               />
-            <p>We all love dogs...</p>
+            <p style={{fontSize:'20px', color:'white'}}>We all love dogs...</p>
           </div>
           <div className="col-md-4">
             <div className="card card-body">
