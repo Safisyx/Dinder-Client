@@ -5,6 +5,7 @@ import SignupForm from '../components/SignupForm';
 import {login} from '../actions/users'
 import {signup} from '../actions/users'
 import {Redirect } from 'react-router-dom'
+import './HomePage.css'
 
 class HomePage extends PureComponent {
 

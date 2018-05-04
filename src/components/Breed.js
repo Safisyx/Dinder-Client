@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import {changePicture} from '../actions/changePicture'
 import {likeBreed} from '../actions/likeBreed'
+import {getUsers} from '../actions/users'
 import './Breed.css'
 import '../fontawesome-all.js'
 
@@ -14,7 +15,7 @@ class Breed extends PureComponent {
       //vote: PropTypes.number.isRequire
     image: PropTypes.string.isRequired,
     //onLike: PropTypes.func.isRequired,
-    onDislike: PropTypes.func.isRequired,
+    //onDislike: PropTypes.func.isRequired,
   }
 
   onLike = (e) => {
@@ -23,11 +24,14 @@ class Breed extends PureComponent {
     //CHANGE PICTURE ACTION
     //this.props.onLike(x)
     //e.target.value=''
-   console.log(this.props.breed.name);
-   console.log(this.props.currentUser.details.id);
-   this.props.likeBreed(this.props.breed.name,this.props.currentUser.details.id)
-   this.props.changePicture()
-   console.log('CHANGE PICTURE and UP VOTE');
+    //console.log(this.props.breed.name);
+    //console.log(this.props.currentUser.details.id);
+    if (!this.props.currentUser.details.preferredbreed.includes(this.props.breed.name)){
+        this.props.likeBreed(this.props.breed.name,this.props.currentUser.details.id)
+      }
+    //this.props.getUsers()
+    this.props.changePicture()
+    //console.log('CHANGE PICTURE and UP VOTE');
   }
   onDislike = (e) => {
     //CHANGE PICTURE
@@ -40,7 +44,7 @@ class Breed extends PureComponent {
   }
 
   render() {
-    console.log(this.props.image);
+    //console.log(this.props.image);
     return (
       <div class="Breed">
 
@@ -83,4 +87,4 @@ const mapStateToProps = (state,props) => {
   }
 }
 
-export default connect(mapStateToProps, {changePicture, likeBreed})(Breed)
+export default connect(mapStateToProps, {changePicture, likeBreed, getUsers})(Breed)
